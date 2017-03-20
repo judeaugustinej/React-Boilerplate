@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React - Template</title>
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+</head>
+<body>
+
+    <div id="container"></div>
+    <!-- JSX code, we tag it to div -->
+    <!-- a component must return a single parent element -->
+
+    <script type="text/babel">
+        var Comment = React.createClass({
+            edit: function() {
+                alert('Editing this comment');
+            },
+            remove: function() {
+                alert('Removing this comment');
+            },
+            render: function () {
+                return (
+                    <div className="commentContainer">
+                        <div className="commentText">{this.props.children}</div>
+                        <button onClick={this.edit} className="button-primary">Edit</button>
+                        <button onClick={this.remove} className="button-danger">Remove</button>
+                    </div>
+                        );
+
+            }
+        });
+        
+        ReactDOM.render(
+            <div className="board">
+            <Comment>Hey my name is jude</Comment>
+            <Comment>Hey my name is jude</Comment>
+            <Comment>Hey my name is jude</Comment>
+            </div>,
+            document.getElementById('container')
+        );
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+Every component must return a single parent tag
+property and state
+property - value dont change
+state - value change
